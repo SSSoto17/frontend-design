@@ -1,2 +1,21 @@
 /* Dine styles her */
-article {}
+
+article {
+  --flow-space: 0.5rlh;
+
+  > * {
+    margin: var(--flow-space) 0;
+  }
+
+  h2 {
+    --flow-space: 2rlh;
+  }
+
+  h3 {
+    --flow-space: 1rlh;
+  }
+
+  h3 + * {
+    --flow-space: 0.25rlh;
+  }
+}
