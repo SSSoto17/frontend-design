@@ -1,4 +1,26 @@
 article {
-    max-width: 65ch;
-    margin-inline: auto;
+  --margin: clamp(1rem, 10vw, 3rem);
+  --full: minmax(var(--margin), 1fr);
+  --content: min(100vw - var(--margin) * 2, 1120px);
+  --feature: minmax(0, 10rem);
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [feature-start] var(--feature)
+    [content-start] var(--content) [content-end]
+    var(--feature) [feature-end]
+    var(--full) [full-end];
+
+  > * {
+    grid-column: content;
+  }
+
+  > blockquote {
+    grid-column: feature;
+  }
+
+  > img {
+    grid-column: full;
+  }
 }
