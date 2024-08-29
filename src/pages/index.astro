@@ -38,5 +38,21 @@ import { cardContent } from "../data/card-content.js";
     padding-block: 4rem; /* Kun af æstetiske årsager */
   }
   section {
+    display: grid;
+    grid-template-columns: [full-start] 1fr [content] min(100% - 2rem, var(--content-width)) 1fr [full-end];
+
+    > * {
+      grid-column: content;
+    }
+
+    ul {
+      grid-column: full;
+      scroll-snap-type: x mandatory;
+    }
+
+    li {
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
   }
 </style>
