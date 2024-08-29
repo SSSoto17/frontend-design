@@ -24,5 +24,12 @@ import { data } from "../data/card-content.js";
 <style>
   main {
     padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr min(100vw - 2rem,1120px) 1fr;
+    place-items: center;
+    
+    > * {
+      grid-column: 2;
+    }
   }
 </style>
